@@ -54,9 +54,9 @@ class Doctor(Zombie):
     def __init__(self, speed, infection_rate, healing_rate):
         """Constructor for doctor
         <speed>, <infection_rate> (0), <healing_rate>(1)"""
-        super(Doctor, self).__init__(speed, infection_rate)
+        super().__init__(speed, infection_rate)
         self.infection_rate = 0
-        self.speed = speed
+
         self.healing_rate = healing_rate
 
     def heal(self, infected_person):
@@ -115,8 +115,8 @@ if __name__ == '__main__':
     my_world.populate_world(500, 0.4)
     for i in range(moves):
         my_world.update_world()
-        print(("Number infected:", my_world.get_number_infected()))
-        print(("Number well:", my_world.get_number_well()))
+        print("Number infected:", my_world.get_number_infected())
+        print("Number well:", my_world.get_number_well())
         if my_world.get_number_well() == 0:
             break
 
